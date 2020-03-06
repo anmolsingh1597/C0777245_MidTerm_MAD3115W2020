@@ -48,8 +48,9 @@ class ViewController: UIViewController {
             
         }
         else{
-            print("Still not working")
-            
+           let alertControll = UIAlertController(title: "Log In Failed", message: "Invalid User-name and Password ", preferredStyle: .alert)
+            alertControll.addAction(UIAlertAction(title: "Ok", style: .default))
+            self.present(alertControll, animated: true, completion: nil)
             }
 }
         }
