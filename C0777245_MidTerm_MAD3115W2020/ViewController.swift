@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
-
+    var ref = Database.database().reference()
+    @IBOutlet weak var iPassword: UITextField!
+    @IBOutlet weak var iUserName: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

@@ -58,6 +58,10 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="iPassword" destination="EiB-FQ-Hyc" id="i0t-Yf-gHp"/>
+                        <outlet property="iUserName" destination="zVs-Hj-LUK" id="mgT-bl-I3C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
