@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
     var ref = Database.database().reference()
     @IBOutlet weak var iPassword: UITextField!
     @IBOutlet weak var iUserName: UITextField!
