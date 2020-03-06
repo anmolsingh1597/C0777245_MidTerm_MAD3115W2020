@@ -24,20 +24,37 @@ class ViewController: UIViewController {
         
         let user = self.iUserName.text
         let password = self.iPassword.text
-        guard let key = self.ref.child("Users").childByAutoId().key else { return }
-        let insert = ["userName": user,"password": password]
-        let refer = self.ref.child("Users")
+//        guard let key = self.ref.child("Logins").childByAutoId().key else { return }
+//        let insert = ["userName": user,"password": password]
+//        let refer = self.ref.child("Logins")
+//        refer.observeSingleEvent(of: .value, with: { (snapshot) in
+//        if let userDict = snapshot.value as? [String:[String:String]]{
+//        if userDict.values.contains(insert as! [String: String]){
+//        print("User exist")
+//        }else{
+//// values inserted successfully
+//        let childUpdates = ["/Logins/\(key)": insert]
+//        self.ref.updateChildValues(childUpdates)
+//        }
+//    }
+//})
+        let refer = self.ref.child("Logins")
         refer.observeSingleEvent(of: .value, with: { (snapshot) in
-        if let userDict = snapshot.value as? [String:[String:String]]{
-        if userDict.values.contains(insert as! [String: String]){
-        print("User exist")
-        }else{
-// values inserted successfully
-        let childUpdates = ["/Users/\(key)": insert]
-        self.ref.updateChildValues(childUpdates)
+        if let userDict = snapshot.value as? [String:[String:String]] {
+            print(userDict.values)
+        let loginData = ["userName": user, "password": password]
+        if userDict.values.contains(loginData as! [String : String]){
+            print("It worked")
+            
         }
-    }
-})
-
+        else{
+            print("Still not working")
+            
+            }
 }
+        }
+        )
+        
+    }
+    
 }
