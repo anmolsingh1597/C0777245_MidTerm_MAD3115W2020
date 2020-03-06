@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="2626.0869565217395" y="141.96428571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Add New Customer View Controller-->
         <scene sceneID="r31-yU-6Pe">
             <objects>
-                <viewController id="mJY-hZ-Iql" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addNewCustomerVC" id="mJY-hZ-Iql" customClass="AddNewCustomerViewController" customModule="C0777245_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BDH-1r-2rg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
