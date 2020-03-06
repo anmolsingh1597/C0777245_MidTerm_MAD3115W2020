@@ -15,6 +15,7 @@
 		8E3FD8A12412696B00AA42E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E3FD8A02412696B00AA42E2 /* Assets.xcassets */; };
 		8E3FD8A42412696B00AA42E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E3FD8A22412696B00AA42E2 /* LaunchScreen.storyboard */; };
 		8E3FD8AE24126B3000AA42E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E3FD8AD24126B3000AA42E2 /* GoogleService-Info.plist */; };
+		8E3FD8B02412872700AA42E2 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD8AF2412872700AA42E2 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8E3FD8A32412696B00AA42E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E3FD8A52412696B00AA42E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E3FD8AD24126B3000AA42E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8E3FD8AF2412872700AA42E2 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,6 @@
 				855A9AA2C2129F77B164CD58 /* Pods-C0777245_MidTerm_MAD3115W2020.debug.xcconfig */,
 				425FC6ECC9FC70CB965F81E0 /* Pods-C0777245_MidTerm_MAD3115W2020.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -91,6 +92,7 @@
 				8E3FD8A22412696B00AA42E2 /* LaunchScreen.storyboard */,
 				8E3FD8A52412696B00AA42E2 /* Info.plist */,
 				8E3FD8AD24126B3000AA42E2 /* GoogleService-Info.plist */,
+				8E3FD8AF2412872700AA42E2 /* SecondViewController.swift */,
 			);
 			path = C0777245_MidTerm_MAD3115W2020;
 			sourceTree = "<group>";
@@ -193,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3FD8B02412872700AA42E2 /* SecondViewController.swift in Sources */,
 				8E3FD89C2412696B00AA42E2 /* ViewController.swift in Sources */,
 				8E3FD8982412696B00AA42E2 /* AppDelegate.swift in Sources */,
 				8E3FD89A2412696B00AA42E2 /* SceneDelegate.swift in Sources */,

@@ -20,10 +20,11 @@ class ViewController: UIViewController {
 
 
     @IBAction func iLogin(_ sender: UIBarButtonItem) {
-     
-        
         let user = self.iUserName.text
         let password = self.iPassword.text
+        
+        // To input data in Firebase
+        
 //        guard let key = self.ref.child("Logins").childByAutoId().key else { return }
 //        let insert = ["userName": user,"password": password]
 //        let refer = self.ref.child("Logins")
@@ -45,7 +46,9 @@ class ViewController: UIViewController {
         let loginData = ["userName": user, "password": password]
         if userDict.values.contains(loginData as! [String : String]){
             print("It worked")
-            
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let secondVC = sb.instantiateViewController(identifier: "secondVC") as! SecondViewController
+            self.navigationController?.pushViewController(secondVC, animated: true)
         }
         else{
            let alertControll = UIAlertController(title: "Log In Failed", message: "Invalid User-name and Password ", preferredStyle: .alert)
