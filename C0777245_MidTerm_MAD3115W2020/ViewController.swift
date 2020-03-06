@@ -19,5 +19,25 @@ class ViewController: UIViewController {
     }
 
 
-}
+    @IBAction func iLogin(_ sender: UIBarButtonItem) {
+     
+        
+        let user = self.iUserName.text
+        let password = self.iPassword.text
+        guard let key = self.ref.child("Users").childByAutoId().key else { return }
+        let insert = ["userName": user,"password": password]
+        let refer = self.ref.child("Users")
+        refer.observeSingleEvent(of: .value, with: { (snapshot) in
+        if let userDict = snapshot.value as? [String:[String:String]]{
+        if userDict.values.contains(insert as! [String: String]){
+        print("User exist")
+        }else{
+// values inserted successfully
+        let childUpdates = ["/Users/\(key)": insert]
+        self.ref.updateChildValues(childUpdates)
+        }
+    }
+})
 
+}
+}
