@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="893" y="138"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Customer List Table View Controller-->
         <scene sceneID="q0q-hf-V2d">
             <objects>
-                <viewController storyboardIdentifier="secondVC" id="f0j-0r-P1x" customClass="SecondViewController" customModule="C0777245_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="customerTableListVC" id="f0j-0r-P1x" customClass="CustomerListTableViewController" customModule="C0777245_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZxJ-e2-ffr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         if userDict.values.contains(loginData as! [String : String]){
             print("It worked")
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let secondVC = sb.instantiateViewController(identifier: "secondVC") as! SecondViewController
+            let secondVC = sb.instantiateViewController(identifier: "customerTableListVC") as! CustomerListTableViewController
             self.navigationController?.pushViewController(secondVC, animated: true)
         }
         else{
