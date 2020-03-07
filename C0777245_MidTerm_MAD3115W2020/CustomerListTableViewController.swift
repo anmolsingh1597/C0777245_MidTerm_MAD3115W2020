@@ -7,16 +7,24 @@
 //
 
 import UIKit
+import Firebase
 
 class CustomerListTableViewController: UIViewController {
-
+    var ref = Database.database().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        fetchDataFromFirebase()
     }
     
-
+    func fetchDataFromFirebase(){
+        let refer = self.ref.child("Users") // this is refernce (it first check "Users" tree exist or not)
+        refer.observeSingleEvent(of: .value, with: { (snapshot) in
+        if let userDict = snapshot.value as? [String: [String: String]]{
+            print(userDict.values)
+            print(userDict.count)
+            }})
+    }
     /*
     // MARK: - Navigation
 
