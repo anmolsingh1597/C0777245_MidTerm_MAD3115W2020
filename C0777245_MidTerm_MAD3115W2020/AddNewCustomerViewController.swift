@@ -26,13 +26,14 @@ class AddNewCustomerViewController: UIViewController {
         let lastName = self.iLastName.text
         let email = self.iEmail.text
         let mobile = self.iMobile.text
-        
         guard let key = self.ref.child("Users").childByAutoId().key else {return}
         let insert = ["id": key, "firstName": firstName, "lastName": lastName, "email": email, "mobile": mobile]
-        let refer = self.ref.child("Users")
+
+        let refer = self.ref.child("Users") // this is refernce (it first check "Users" tree exist or not)
         refer.observeSingleEvent(of: .value, with: { (snapshot) in
             if let userDict = snapshot.value as? [String: [String: String]]{
                 let validationData = [ "email": email, "mobile": mobile]
+                print(userDict)
                 if userDict.values.contains(validationData as! [String: String]){
                     print("if")
                     let alertControll = UIAlertController(title: "User Exist", message: "Duplicate values", preferredStyle: .alert)
@@ -45,9 +46,10 @@ class AddNewCustomerViewController: UIViewController {
                 }
             }
         })
-//        let childUpdates = ["/Users/\(key)": insert]
-//               ref.updateChildValues(childUpdates)
-    }
+// force entry in database
+        //let childUpdates = ["/Users/\(key)": insert]
+        //ref.updateChildValues(childUpdates)
+ }
     
     
     /*
