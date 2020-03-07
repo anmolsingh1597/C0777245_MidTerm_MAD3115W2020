@@ -43,6 +43,9 @@ class AddNewCustomerViewController: UIViewController {
                     print("else")
                     let childUpdates = ["/Users/\(key)": insert]
                     self.ref.updateChildValues(childUpdates)
+                    let sb = UIStoryboard(name: "Main", bundle: nil)
+                    let secondVC = sb.instantiateViewController(identifier: "customerTableListVC") as! CustomerListTableViewController
+                    self.navigationController?.pushViewController(secondVC, animated: true)
                 }
             }
         })
