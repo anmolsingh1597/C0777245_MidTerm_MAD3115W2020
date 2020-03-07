@@ -21,10 +21,18 @@ class CustomerListTableViewController: UIViewController {
         let refer = self.ref.child("Users") // this is refernce (it first check "Users" tree exist or not)
         refer.observeSingleEvent(of: .value, with: { (snapshot) in
         if let userDict = snapshot.value as? [String: [String: String]]{
-            print(userDict.values)
-            print(userDict.count)
+            print("------------------------------------")
+            //print(userDict)
+            for v in userDict.values
+            {
+                print(v["firstName"])
+            }
+            //self.readData(users: userDict)
+            //print(userDict.count)
             }})
     }
+    
+
     /*
     // MARK: - Navigation
 
