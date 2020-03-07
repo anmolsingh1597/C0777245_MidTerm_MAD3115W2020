@@ -47,8 +47,8 @@ class AddNewCustomerViewController: UIViewController {
             }
         })
 // force entry in database
-        //let childUpdates = ["/Users/\(key)": insert]
-        //ref.updateChildValues(childUpdates)
+//        let childUpdates = ["/Users/\(key)": insert]
+//        ref.updateChildValues(childUpdates)
  }
     
     
