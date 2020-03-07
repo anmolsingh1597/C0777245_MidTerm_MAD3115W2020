@@ -7,16 +7,31 @@
 //
 
 import UIKit
+import Firebase
 
 class AddNewCustomerViewController: UIViewController {
-
+    var ref = Database.database().reference()
+    @IBOutlet weak var iFirstName: UITextField!
+    @IBOutlet weak var iLastName: UITextField!
+    @IBOutlet weak var iEmail: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func iSave(_ sender: UIBarButtonItem) {
+        let firstName = self.iFirstName.text
+        let lastName = self.iLastName.text
+        let email = self.iEmail.text
+        
+        guard let key = self.ref.child("Users").childByAutoId().key else {return}
+        let insert = ["id": key, "firstName": firstName, "lastName": lastName, "email": email]
+        let childUpdates = ["/Users/\(key)": insert]
+               ref.updateChildValues(childUpdates)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
