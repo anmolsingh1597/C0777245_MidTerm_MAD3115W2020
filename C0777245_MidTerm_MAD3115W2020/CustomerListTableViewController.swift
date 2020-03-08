@@ -18,7 +18,7 @@ class CustomerListTableViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         fetchDataFromFirebase()
-       printFirstNameArray()
+     //  printFirstNameArray()
     }
     static func getInstance() -> CustomerListTableViewController{
            return instance
@@ -32,8 +32,8 @@ class CustomerListTableViewController: UIViewController {
             //print(userDict)
             for value in userDict.values
             {
-                print(value["firstName"]!)
-                print(value["lastName"]!)
+               // print(value["firstName"]!)
+               // print(value["lastName"]!)
                     self.firstNameArray.append(value["firstName"]!)
             }
             dump(self.firstNameArray)
@@ -76,7 +76,7 @@ extension CustomerListTableViewController: UITableViewDataSource, UITableViewDel
         //fetchDataFromFirebase()
          let cell =
                tableView.dequeueReusableCell(withIdentifier: "customerCell")
-              // let customer = firstNameArray[indexPath.row]
+        // let customer = firstNameArray[indexPath.row]
         cell?.textLabel?.text = firstNameArray[0]
         //               cell?.detailTextLabel?.text = country.capital
 //               cell?.imageView?.image = country.flag
@@ -84,8 +84,8 @@ extension CustomerListTableViewController: UITableViewDataSource, UITableViewDel
                return cell!
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//              iCustomerTable.reloadData()
-//
-//          }
+    override func viewWillAppear(_ animated: Bool) {
+              iCustomerTable.reloadData()
+
+          }
 }

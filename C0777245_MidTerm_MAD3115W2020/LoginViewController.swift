@@ -42,10 +42,10 @@ class LoginViewController: UIViewController {
         let refer = self.ref.child("Logins")
         refer.observeSingleEvent(of: .value, with: { (snapshot) in
         if let userDict = snapshot.value as? [String:[String:String]] {
-            print(userDict.values)
+           // print(userDict.values)
         let loginData = ["userName": user, "password": password]
         if userDict.values.contains(loginData as! [String : String]){
-            print("It worked")
+            //print("It worked")
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let secondVC = sb.instantiateViewController(identifier: "customerTableListVC") as! CustomerListTableViewController
             self.navigationController?.pushViewController(secondVC, animated: true)
