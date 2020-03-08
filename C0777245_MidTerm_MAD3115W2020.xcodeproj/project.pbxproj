@@ -17,6 +17,7 @@
 		8E3FD8AE24126B3000AA42E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E3FD8AD24126B3000AA42E2 /* GoogleService-Info.plist */; };
 		8E3FD8B02412872700AA42E2 /* CustomerListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD8AF2412872700AA42E2 /* CustomerListTableViewController.swift */; };
 		8E3FD8B22412BB7D00AA42E2 /* AddNewCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD8B12412BB7D00AA42E2 /* AddNewCustomerViewController.swift */; };
+		8EAFC89B2415705B00DFFD30 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAFC89A2415705B00DFFD30 /* Customer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8E3FD8AD24126B3000AA42E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8E3FD8AF2412872700AA42E2 /* CustomerListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListTableViewController.swift; sourceTree = "<group>"; };
 		8E3FD8B12412BB7D00AA42E2 /* AddNewCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCustomerViewController.swift; sourceTree = "<group>"; };
+		8EAFC89A2415705B00DFFD30 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				8E3FD8AD24126B3000AA42E2 /* GoogleService-Info.plist */,
 				8E3FD8AF2412872700AA42E2 /* CustomerListTableViewController.swift */,
 				8E3FD8B12412BB7D00AA42E2 /* AddNewCustomerViewController.swift */,
+				8EAFC89A2415705B00DFFD30 /* Customer.swift */,
 			);
 			path = C0777245_MidTerm_MAD3115W2020;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				8E3FD8B02412872700AA42E2 /* CustomerListTableViewController.swift in Sources */,
 				8E3FD89C2412696B00AA42E2 /* LoginViewController.swift in Sources */,
 				8E3FD8B22412BB7D00AA42E2 /* AddNewCustomerViewController.swift in Sources */,
+				8EAFC89B2415705B00DFFD30 /* Customer.swift in Sources */,
 				8E3FD8982412696B00AA42E2 /* AppDelegate.swift in Sources */,
 				8E3FD89A2412696B00AA42E2 /* SceneDelegate.swift in Sources */,
 			);

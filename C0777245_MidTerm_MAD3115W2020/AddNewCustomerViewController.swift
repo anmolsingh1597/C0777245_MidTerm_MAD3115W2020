@@ -33,7 +33,7 @@ class AddNewCustomerViewController: UIViewController {
         refer.observeSingleEvent(of: .value, with: { (snapshot) in
             if let userDict = snapshot.value as? [String: [String: String]]{
                 let validationData = [ "email": email, "mobile": mobile]
-                print(userDict)
+               // print(userDict)
                 if userDict.values.contains(validationData as! [String: String]){
                     print("if")
                     let alertControll = UIAlertController(title: "User Exist", message: "Duplicate values", preferredStyle: .alert)
