@@ -13,9 +13,23 @@ class LoginViewController: UIViewController {
     var ref = Database.database().reference()
     @IBOutlet weak var iPassword: UITextField!
     @IBOutlet weak var iUserName: UITextField!
+    @IBOutlet weak var iRememberMe: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+         iRememberMe.addTarget(self, action: #selector(self.stateChanged), for: .valueChanged)
+                let defaults: UserDefaults? = UserDefaults.standard
+
+        // check if defaults already saved the details
+            if (defaults?.bool(forKey: "ISRemember"))! {
+                iUserName.text = defaults?.value(forKey: "SavedUserName") as? String
+                iPassword.text = defaults?.value(forKey: "SavedPassword") as? String
+                    iRememberMe.setOn(true, animated: false)
+                }
+                else {
+                    iRememberMe.setOn(false, animated: false)
+                }
     }
 
 
@@ -60,5 +74,16 @@ class LoginViewController: UIViewController {
         )
         
     }
-    
+    @objc func stateChanged(_ switchState: UISwitch) {
+
+    let defaults: UserDefaults? = UserDefaults.standard
+        if switchState.isOn {
+        defaults?.set(true, forKey: "ISRemember")
+        defaults?.set(iUserName.text, forKey: "SavedUserName")
+        defaults?.set(iPassword.text, forKey: "SavedPassword")
+    }
+    else {
+        defaults?.set(false, forKey: "ISRemember")
+        }
+        }
 }
