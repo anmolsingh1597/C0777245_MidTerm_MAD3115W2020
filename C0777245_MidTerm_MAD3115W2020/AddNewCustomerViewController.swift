@@ -31,7 +31,7 @@ class AddNewCustomerViewController: UIViewController {
         guard let key = self.ref.child("Users").childByAutoId().key else {return}
         let insert = ["id": customerId, "firstName": firstName, "lastName": lastName, "email": email?.emailValidation(), "mobile": mobile?.mobileNumberValidation()]
         
-                    if customerId == "" || firstName == ""
+            if customerId == "" || firstName == ""
                 {
                     print("if")
                     let alertControll = UIAlertController(title: "Error!", message: "Required Customer Id and First Name", preferredStyle: .alert)
