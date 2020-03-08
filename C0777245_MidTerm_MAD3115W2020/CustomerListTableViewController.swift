@@ -60,8 +60,10 @@ extension CustomerListTableViewController: UITableViewDataSource, UITableViewDel
         cell?.detailTextLabel?.text = customer.customerId
         return cell!
     }
-    override func viewWillAppear(_ animated: Bool) {
-              iCustomerTable.reloadData()
+//    override func viewWillAppear(_ animated: Bool) {
+//              iCustomerTable.reloadData()
+//       // iCustomerTable.endUpdates()
+//          }
 
-          }
 }
+

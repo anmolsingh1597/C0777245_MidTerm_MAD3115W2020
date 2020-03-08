@@ -74,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="892.75362318840587" y="137.94642857142856"/>
         </scene>
-        <!--Customer List Table View Controller-->
+        <!--Customers-->
         <scene sceneID="q0q-hf-V2d">
             <objects>
                 <viewController storyboardIdentifier="customerTableListVC" id="f0j-0r-P1x" customClass="CustomerListTableViewController" customModule="C0777245_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
@@ -127,7 +127,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ApU-0w-zoO"/>
                     </view>
-                    <navigationItem key="navigationItem" id="23T-g2-S83">
+                    <navigationItem key="navigationItem" title="Customers" id="23T-g2-S83">
                         <barButtonItem key="leftBarButtonItem" title="Logout" style="plain" id="2ZT-Uk-K5J">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tZd-SC-zGC">
                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
@@ -156,7 +156,7 @@
             </objects>
             <point key="canvasLocation" x="2626.0869565217395" y="141.96428571428569"/>
         </scene>
-        <!--Add New Customer View Controller-->
+        <!--New Customer-->
         <scene sceneID="r31-yU-6Pe">
             <objects>
                 <viewController storyboardIdentifier="addNewCustomerVC" id="mJY-hZ-Iql" customClass="AddNewCustomerViewController" customModule="C0777245_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
@@ -243,7 +243,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Y4w-Xt-5Nc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="15M-ig-oZy">
+                    <navigationItem key="navigationItem" title="New Customer" id="15M-ig-oZy">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="6Kn-Gs-Rdm">
                             <connections>
                                 <action selector="iSave:" destination="mJY-hZ-Iql" id="Z1Y-NI-l8C"/>

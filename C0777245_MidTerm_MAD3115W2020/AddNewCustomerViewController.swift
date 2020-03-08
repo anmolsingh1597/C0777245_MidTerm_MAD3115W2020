@@ -11,6 +11,7 @@ import Firebase
 
 class AddNewCustomerViewController: UIViewController {
     var ref = Database.database().reference()
+    @IBOutlet weak var iCustomerId: UITextField!
     @IBOutlet weak var iFirstName: UITextField!
     @IBOutlet weak var iLastName: UITextField!
     @IBOutlet weak var iEmail: UITextField!
@@ -22,21 +23,18 @@ class AddNewCustomerViewController: UIViewController {
     }
     
     @IBAction func iSave(_ sender: UIBarButtonItem) {
+        let customerId = self.iCustomerId.text
         let firstName = self.iFirstName.text
         let lastName = self.iLastName.text
         let email = self.iEmail.text
         let mobile = self.iMobile.text
         guard let key = self.ref.child("Users").childByAutoId().key else {return}
-        let insert = ["id": key, "firstName": firstName, "lastName": lastName, "email": email, "mobile": mobile]
-
-        let refer = self.ref.child("Users") // this is refernce (it first check "Users" tree exist or not)
-        refer.observeSingleEvent(of: .value, with: { (snapshot) in
-            if let userDict = snapshot.value as? [String: [String: String]]{
-                let validationData = [ "email": email, "mobile": mobile]
-               // print(userDict)
-                if userDict.values.contains(validationData as! [String: String]){
+        let insert = ["id": customerId, "firstName": firstName, "lastName": lastName, "email": email?.emailValidation(), "mobile": mobile?.mobileNumberValidation()]
+        
+                    if customerId == "" || firstName == ""
+                {
                     print("if")
-                    let alertControll = UIAlertController(title: "User Exist", message: "Duplicate values", preferredStyle: .alert)
+                    let alertControll = UIAlertController(title: "Error!", message: "Required Customer Id and First Name", preferredStyle: .alert)
                                alertControll.addAction(UIAlertAction(title: "Ok", style: .default))
                                self.present(alertControll, animated: true, completion: nil)
                 }else{
@@ -47,11 +45,10 @@ class AddNewCustomerViewController: UIViewController {
                     let secondVC = sb.instantiateViewController(identifier: "customerTableListVC") as! CustomerListTableViewController
                     self.navigationController?.pushViewController(secondVC, animated: true)
                 }
-            }
-        })
+
 // force entry in database
-//        let childUpdates = ["/Users/\(key)": insert]
-//        ref.updateChildValues(childUpdates)
+        //let childUpdates = ["/Users/\(key)": insert]
+        //ref.updateChildValues(childUpdates)
  }
     
     
