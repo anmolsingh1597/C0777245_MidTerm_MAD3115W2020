@@ -13,42 +13,18 @@ class CustomerListTableViewController: UIViewController {
         @IBOutlet weak var iCustomerTable: UITableView!
         var ref = Database.database().reference()
         private static let instance = CustomerListTableViewController()
-        var firstNameArray: [String] = []
+        //var firstNameArray: [String] = []
     var customerName: [Customer] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         customerName = DataStorage.getInstance().getAllCustomers()
-        fetchDataFromFirebase()
-     //  printFirstNameArray()
+        //DataStorage.getInstance().loadData()
     }
     static func getInstance() -> CustomerListTableViewController{
            return instance
        }
     
-    func fetchDataFromFirebase() -> Array<String>{
-        let refer = self.ref.child("Users") // this is refernce (it first check "Users" tree exist or not)
-        refer.observeSingleEvent(of: .value, with: { (snapshot) in
-        if let userDict = snapshot.value as? [String: [String: String]]{
-            print("------------------------------------")
-            //print(userDict)
-            for value in userDict.values
-            {
-               // print(value["firstName"]!)
-               // print(value["lastName"]!)
-                    self.firstNameArray.append(value["firstName"]!)
-            }
-            dump(self.firstNameArray)
-            //self.readData(users: userDict)
-            //print(userDict.count)
-            }})
-        return self.firstNameArray
-    }
-    
-    func printFirstNameArray(){
-        print("Values")
-        dump(firstNameArray)
-    }
     
     @IBAction func iLogout(_ sender: UIButton) {
     self.navigationController?.popToRootViewController(animated: true)
@@ -82,9 +58,7 @@ extension CustomerListTableViewController: UITableViewDataSource, UITableViewDel
         
         cell?.textLabel?.text = customer.firstName
         cell?.detailTextLabel?.text = customer.customerId
-//               cell?.imageView?.image = country.flag
-       
-               return cell!
+        return cell!
     }
     
     override func viewWillAppear(_ animated: Bool) {
