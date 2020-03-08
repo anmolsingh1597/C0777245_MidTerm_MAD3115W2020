@@ -10,13 +10,15 @@ import UIKit
 import Firebase
 
 class CustomerListTableViewController: UIViewController {
-    @IBOutlet weak var iCustomerTable: UITableView!
-    var ref = Database.database().reference()
-     private static let instance = CustomerListTableViewController()
-    var firstNameArray: [String] = []
+        @IBOutlet weak var iCustomerTable: UITableView!
+        var ref = Database.database().reference()
+        private static let instance = CustomerListTableViewController()
+        var firstNameArray: [String] = []
+    var customerName: [Customer] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        customerName = DataStorage.getInstance().getAllCustomers()
         fetchDataFromFirebase()
      //  printFirstNameArray()
     }
@@ -69,16 +71,17 @@ extension CustomerListTableViewController: UITableViewDataSource, UITableViewDel
            return 1
        }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return firstNameArray.count
+        return customerName.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //fetchDataFromFirebase()
          let cell =
-               tableView.dequeueReusableCell(withIdentifier: "customerCell")
-        // let customer = firstNameArray[indexPath.row]
-        cell?.textLabel?.text = firstNameArray[0]
-        //               cell?.detailTextLabel?.text = country.capital
+        tableView.dequeueReusableCell(withIdentifier: "customerCell")
+        let customer = customerName[indexPath.row]
+        
+        cell?.textLabel?.text = customer.firstName
+        cell?.detailTextLabel?.text = customer.customerId
 //               cell?.imageView?.image = country.flag
        
                return cell!
