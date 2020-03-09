@@ -12,19 +12,13 @@ import Firebase
 class CustomerListTableViewController: UIViewController {
         @IBOutlet weak var iCustomerTable: UITableView!
         var ref = Database.database().reference()
-        private static let instance = CustomerListTableViewController()
-        //var firstNameArray: [String] = []
-    var customerName: [Customer] = []
+        var customerName: [Customer] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("viewDid load")
         // Do any additional setup after loading the view.
         customerName = DataStorage.getInstance().getAllCustomers()
-        //DataStorage.getInstance().loadData()
     }
-    static func getInstance() -> CustomerListTableViewController{
-           return instance
-       }
-    
     
     @IBAction func iLogout(_ sender: UIButton) {
     self.navigationController?.popToRootViewController(animated: true)
@@ -60,10 +54,6 @@ extension CustomerListTableViewController: UITableViewDataSource, UITableViewDel
         cell?.detailTextLabel?.text = customer.customerId
         return cell!
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//              iCustomerTable.reloadData()
-//       // iCustomerTable.endUpdates()
-//          }
 
 }
 

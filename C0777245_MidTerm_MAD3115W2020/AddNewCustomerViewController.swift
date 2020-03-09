@@ -18,10 +18,9 @@ class AddNewCustomerViewController: UIViewController {
     @IBOutlet weak var iMobile: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-    
+
     @IBAction func iSave(_ sender: UIBarButtonItem) {
         let customerId = self.iCustomerId.text
         let firstName = self.iFirstName.text
@@ -33,12 +32,12 @@ class AddNewCustomerViewController: UIViewController {
         
             if customerId == "" || firstName == ""
                 {
-                    print("if")
+                   
                     let alertControll = UIAlertController(title: "Error!", message: "Required Customer Id and First Name", preferredStyle: .alert)
                                alertControll.addAction(UIAlertAction(title: "Ok", style: .default))
                                self.present(alertControll, animated: true, completion: nil)
                 }else{
-                    print("else")
+                   
                     let childUpdates = ["/Users/\(key)": insert]
                     self.ref.updateChildValues(childUpdates)
                     let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -46,9 +45,6 @@ class AddNewCustomerViewController: UIViewController {
                     self.navigationController?.pushViewController(secondVC, animated: true)
                 }
 
-// force entry in database
-        //let childUpdates = ["/Users/\(key)": insert]
-        //ref.updateChildValues(childUpdates)
  }
     
     

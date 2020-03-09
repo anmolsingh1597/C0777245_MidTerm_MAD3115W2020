@@ -36,23 +36,7 @@ class LoginViewController: UIViewController {
     @IBAction func iLogin(_ sender: UIBarButtonItem) {
         let user = self.iUserName.text
         let password = self.iPassword.text
-        
-        // To input data in Firebase
-        
-//        guard let key = self.ref.child("Logins").childByAutoId().key else { return }
-//        let insert = ["userName": user,"password": password]
-//        let refer = self.ref.child("Logins")
-//        refer.observeSingleEvent(of: .value, with: { (snapshot) in
-//        if let userDict = snapshot.value as? [String:[String:String]]{
-//        if userDict.values.contains(insert as! [String: String]){
-//        print("User exist")
-//        }else{
-//// values inserted successfully
-//        let childUpdates = ["/Logins/\(key)": insert]
-//        self.ref.updateChildValues(childUpdates)
-//        }
-//    }
-//})
+
         let refer = self.ref.child("Logins")
         refer.observeSingleEvent(of: .value, with: { (snapshot) in
         if let userDict = snapshot.value as? [String:[String:String]] {
@@ -87,3 +71,22 @@ class LoginViewController: UIViewController {
         }
         }
 }
+
+
+        
+        // To input data in Firebase
+        
+//        guard let key = self.ref.child("Logins").childByAutoId().key else { return }
+//        let insert = ["userName": user,"password": password]
+//        let refer = self.ref.child("Logins")
+//        refer.observeSingleEvent(of: .value, with: { (snapshot) in
+//        if let userDict = snapshot.value as? [String:[String:String]]{
+//        if userDict.values.contains(insert as! [String: String]){
+//        print("User exist")
+//        }else{
+//// values inserted successfully
+//        let childUpdates = ["/Logins/\(key)": insert]
+//        self.ref.updateChildValues(childUpdates)
+//        }
+//    }
+//})

@@ -37,35 +37,6 @@ class DataStorage
                 }
             }
         })
-        
-        //customerList.append(Customer.init(customerId: "gfh", firstName: "Me", lastName: "Me", emailId: "me@me", mobile: "8997"))
-//        countryList.append(Country.init(name: "India", capital: "Afghanistan", flag: #imageLiteral(resourceName: "elephant.png")))
-//        countryList.append(Country.init(name: "Canada", capital: "Afghanistan", flag: #imageLiteral(resourceName: "elephant.png")))
-//        countryList.append(Country.init(name: "Afghanistan", capital: "Afghanistan", flag: #imageLiteral(resourceName: "elephant.png")))
-//        countryList.append(Country.init(name: "Afghanistan", capital: "Afghanistan", flag: #imageLiteral(resourceName: "elephant.png")))
-//        countryList.append(Country.init(name: "Afghanistan", capital: "Afghanistan", flag: #imageLiteral(resourceName: "elephant.png")))
-//        countryList.append(Country.init(name: "Afghanistan", capital: "Afghanistan", flag: #imageLiteral(resourceName: "elephant.png")))
-                                                  
     }
     
-//
-//    func fetchDataFromFirebase() -> Array<String>{
-//        let refer = self.ref.child("Users") // this is refernce (it first check "Users" tree exist or not)
-//        refer.observeSingleEvent(of: .value, with: { (snapshot) in
-//        if let userDict = snapshot.value as? [String: [String: String]]{
-//            print("------------------------------------")
-//            //print(userDict)
-//            for value in userDict.values
-//            {
-//               // print(value["firstName"]!)
-//               // print(value["lastName"]!)
-//                    self.firstNameArray.append(value["firstName"]!)
-//            }
-//            dump(self.firstNameArray)
-//            //self.readData(users: userDict)
-//            //print(userDict.count)
-//            }})
-//        return self.firstNameArray
-//    }
-//
 }
