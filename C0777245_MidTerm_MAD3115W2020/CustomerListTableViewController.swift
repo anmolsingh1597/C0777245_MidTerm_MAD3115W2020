@@ -15,7 +15,6 @@ class CustomerListTableViewController: UIViewController {
         var customerName: [Customer] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDid load")
         // Do any additional setup after loading the view.
         customerName = DataStorage.getInstance().getAllCustomers()
     }
