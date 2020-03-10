@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class AddNewBillViewController: UIViewController, UITextFieldDelegate
 {
+    var ref = Database.database().reference().child("Users")
     var datePicker : UIDatePicker!
     @IBOutlet weak var iDateTextField: UITextField!
+    @IBOutlet weak var iBillId: UITextField!
+    @IBOutlet weak var iBillType: UITextField!
+    @IBOutlet weak var iBillAmount: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,29 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
            self.pickUpDate(self.iDateTextField)
        }
 
+    
+    @IBAction func iSaveButton(_ sender: UIBarButtonItem) {
+        let billId = self.iBillId.text
+        let date = self.iDateTextField.text
+        let billType = self.iBillType.text
+        let billAmount = self.iBillAmount.text
+          guard let key = self.ref.child("Bills").childByAutoId().key else {return}
+        let insert = ["id": billId, "date": date, "billType": billType, "billAmount": billAmount]
+        if billId == "" || date == "" || billType == "" || billAmount == ""
+                       {
+                          
+                           let alertControll = UIAlertController(title: "Error!", message: "All fields are required", preferredStyle: .alert)
+                                      alertControll.addAction(UIAlertAction(title: "Ok", style: .default))
+                                      self.present(alertControll, animated: true, completion: nil)
+                       }
+        else{
+            let childUpdates = ["/Bills/\(key)": insert]
+                              self.ref.updateChildValues(childUpdates)
+                             
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -37,6 +65,8 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
     */
 
 }
+
+
 extension AddNewBillViewController
 {
     func pickUpDate(_ textField : UITextField){

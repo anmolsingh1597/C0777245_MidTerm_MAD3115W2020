@@ -202,9 +202,15 @@
                     <navigationItem key="navigationItem" id="Pjr-6x-PKL">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="pgS-kz-UCx">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="iSaveButton:" destination="xpF-Ro-eXB" id="JBQ-rh-a0c"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="iBillAmount" destination="ovG-20-bf9" id="IeF-Ry-gVm"/>
+                        <outlet property="iBillId" destination="Ldu-4c-jVX" id="P3M-if-KTg"/>
+                        <outlet property="iBillType" destination="ooa-vh-koM" id="ERo-xq-cK6"/>
                         <outlet property="iDateTextField" destination="FOM-xh-x3D" id="gK3-sh-JT9"/>
                     </connections>
                 </viewController>
