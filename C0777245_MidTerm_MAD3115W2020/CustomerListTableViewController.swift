@@ -13,6 +13,7 @@ class CustomerListTableViewController: UIViewController {
         @IBOutlet weak var iCustomerTable: UITableView!
         var ref = Database.database().reference()
         var customerName: [Customer] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -39,26 +40,24 @@ extension CustomerListTableViewController: UITableViewDataSource, UITableViewDel
     func numberOfSections(in tableview: UITableView) -> Int{
            return 1
        }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return customerName.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //fetchDataFromFirebase()
          let cell =
         tableView.dequeueReusableCell(withIdentifier: "customerCell")
         let customer = customerName[indexPath.row]
-        
         cell?.textLabel?.text = customer.firstName
         cell?.detailTextLabel?.text = customer.customerId
         return cell!
     }
-
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let customer = customerName[indexPath.row]
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let showBillDetailsVC = sb.instantiateViewController(withIdentifier: "showBillDetailsVC") as! ShowBillDetailsViewController
+        let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let showBillDetailsVC: ShowBillDetailsViewController = sb.instantiateViewController(withIdentifier: "showBillDetailsVC") as! ShowBillDetailsViewController
         showBillDetailsVC.customerId = customer.customerId
         showBillDetailsVC.firstName = customer.firstName
         showBillDetailsVC.lastName = customer.lastName
