@@ -20,6 +20,7 @@
 		8EAFC89B2415705B00DFFD30 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAFC89A2415705B00DFFD30 /* Customer.swift */; };
 		8EAFC89D2415741600DFFD30 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAFC89C2415741600DFFD30 /* DataStorage.swift */; };
 		8EAFC89F2415AE5C00DFFD30 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAFC89E2415AE5C00DFFD30 /* String+Extension.swift */; };
+		8EC30A8D2417A51F007427AA /* ShowBillDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC30A8C2417A51F007427AA /* ShowBillDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		8EAFC89A2415705B00DFFD30 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		8EAFC89C2415741600DFFD30 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		8EAFC89E2415AE5C00DFFD30 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		8EC30A8C2417A51F007427AA /* ShowBillDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowBillDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				8E3FD89B2412696B00AA42E2 /* LoginViewController.swift */,
 				8E3FD8AF2412872700AA42E2 /* CustomerListTableViewController.swift */,
 				8E3FD8B12412BB7D00AA42E2 /* AddNewCustomerViewController.swift */,
+				8EC30A8C2417A51F007427AA /* ShowBillDetailsViewController.swift */,
 				8E3FD89D2412696B00AA42E2 /* Main.storyboard */,
 				8E3FD8A22412696B00AA42E2 /* LaunchScreen.storyboard */,
 				8EAFC89A2415705B00DFFD30 /* Customer.swift */,
@@ -207,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC30A8D2417A51F007427AA /* ShowBillDetailsViewController.swift in Sources */,
 				8EAFC89F2415AE5C00DFFD30 /* String+Extension.swift in Sources */,
 				8E3FD8B02412872700AA42E2 /* CustomerListTableViewController.swift in Sources */,
 				8E3FD89C2412696B00AA42E2 /* LoginViewController.swift in Sources */,
