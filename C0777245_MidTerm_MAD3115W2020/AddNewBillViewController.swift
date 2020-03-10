@@ -26,42 +26,6 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
            self.pickUpDate(self.iDateTextField)
        }
 
-    func pickUpDate(_ textField : UITextField){
-        
-        // DatePicker
-        self.datePicker = UIDatePicker(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
-        self.datePicker.backgroundColor = UIColor.white
-        self.datePicker.datePickerMode = UIDatePicker.Mode.date
-        textField.inputView = self.datePicker
-        
-        // ToolBar
-        let toolBar = UIToolbar()
-        toolBar.barStyle = .default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
-        toolBar.sizeToFit()
-        
-        // Adding Button ToolBar
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(AddNewBillViewController.doneClick))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(AddNewBillViewController.cancelClick))
-        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        textField.inputAccessoryView = toolBar
-        
-    }
-    
-    @objc func doneClick() {
-        let dateFormatter1 = DateFormatter()
-        dateFormatter1.dateStyle = .medium
-        dateFormatter1.timeStyle = .none
-        iDateTextField.text = dateFormatter1.string(from: datePicker.date)
-        iDateTextField.resignFirstResponder()
-    }
-    
-    @objc func cancelClick() {
-        iDateTextField.resignFirstResponder()
-    }
     /*
     // MARK: - Navigation
 
@@ -72,4 +36,43 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
     }
     */
 
+}
+extension AddNewBillViewController
+{
+    func pickUpDate(_ textField : UITextField){
+          
+          // DatePicker
+          self.datePicker = UIDatePicker(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
+          self.datePicker.backgroundColor = UIColor.white
+          self.datePicker.datePickerMode = UIDatePicker.Mode.date
+          textField.inputView = self.datePicker
+          
+          // ToolBar
+          let toolBar = UIToolbar()
+          toolBar.barStyle = .default
+          toolBar.isTranslucent = true
+          toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+          toolBar.sizeToFit()
+          
+          // Adding Button ToolBar
+          let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(AddNewBillViewController.doneClick))
+          let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+          let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(AddNewBillViewController.cancelClick))
+          toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+          toolBar.isUserInteractionEnabled = true
+          textField.inputAccessoryView = toolBar
+          
+      }
+      
+      @objc func doneClick() {
+          let dateFormatter1 = DateFormatter()
+          dateFormatter1.dateStyle = .medium
+          dateFormatter1.timeStyle = .none
+          iDateTextField.text = dateFormatter1.string(from: datePicker.date)
+          iDateTextField.resignFirstResponder()
+      }
+      
+      @objc func cancelClick() {
+          iDateTextField.resignFirstResponder()
+      }
 }
