@@ -54,5 +54,16 @@ extension CustomerListTableViewController: UITableViewDataSource, UITableViewDel
         return cell!
     }
 
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let customer = customerName[indexPath.row]
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let showBillDetailsVC = sb.instantiateViewController(withIdentifier: "showBillDetailsVC") as! ShowBillDetailsViewController
+        showBillDetailsVC.customerId = customer.customerId
+        showBillDetailsVC.firstName = customer.firstName
+        showBillDetailsVC.lastName = customer.lastName
+        self.navigationController?.pushViewController(showBillDetailsVC, animated: true)
+    }
+    
 }
 

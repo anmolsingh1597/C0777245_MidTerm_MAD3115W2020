@@ -9,14 +9,14 @@
 import UIKit
 
 class ShowBillDetailsViewController: UIViewController {
-    var customerList: [Customer] = []
+   // var customerList: [Customer] = []
     var customerId: String?
     var firstName: String?
     var lastName: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        customerList = DataStorage.getInstance().getAllCustomers()
+       // customerList = DataStorage.getInstance().getAllCustomers()
     }
     
 
@@ -39,11 +39,11 @@ extension ShowBillDetailsViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "individualCustomerCell", for: indexPath) as! CustomerTableViewCell
         
-        let customer = customerList[indexPath.row]
+       // let customer = customerList[indexPath.row]
         
-        cell.iFirstNameViewCell.text = customer.firstName
-        cell.iLastNameViewCell.text = customer.lastName
-        cell.iCustomerIdViewCell.text = customer.customerId
+        cell.iFirstNameViewCell.text = self.firstName
+        cell.iLastNameViewCell.text = self.lastName
+        cell.iCustomerIdViewCell.text = self.customerId
         
         return cell
     }
@@ -55,5 +55,6 @@ extension ShowBillDetailsViewController: UITableViewDelegate, UITableViewDataSou
     func numberOfSections(in tableView: UITableView) -> Int {
       return 1
     }
+
     
 }
