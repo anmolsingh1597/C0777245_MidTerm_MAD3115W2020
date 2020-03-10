@@ -12,9 +12,15 @@ class ShowBillDetailsViewController: UIViewController {
     var customerId: String?
     var firstName: String?
     var lastName: String?
+    @IBOutlet weak var iCustomerId: UILabel!
+    @IBOutlet weak var iFirstName: UILabel!
+    @IBOutlet weak var iLastName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        iCustomerId.text = self.customerId
+        iFirstName.text = self.firstName
+        iLastName.text = self.lastName
     }
     
 
@@ -29,28 +35,4 @@ class ShowBillDetailsViewController: UIViewController {
     */
 
 }
-extension ShowBillDetailsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "individualCustomerCell", for: indexPath) as! CustomerTableViewCell
-                
-        cell.iFirstNameViewCell.text = self.firstName
-        cell.iLastNameViewCell.text = self.lastName
-        cell.iCustomerIdViewCell.text = self.customerId
-        
-        return cell
-    }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      return CGFloat(100.0)
-    }
-     
-    func numberOfSections(in tableView: UITableView) -> Int {
-      return 1
-    }
-
-    
-}
