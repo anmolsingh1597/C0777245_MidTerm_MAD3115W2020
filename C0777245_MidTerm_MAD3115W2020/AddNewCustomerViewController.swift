@@ -40,6 +40,7 @@ class AddNewCustomerViewController: UIViewController {
                    
                     let childUpdates = ["/Users/\(key)": insert]
                     self.ref.updateChildValues(childUpdates)
+                    DataStorage.getInstance().addCustomer(customer: Customer.init(customerId: customerId!, firstName: firstName!, lastName: lastName!, emailId: email!, mobile: mobile!))
                     let sb = UIStoryboard(name: "Main", bundle: nil)
                     let secondVC = sb.instantiateViewController(identifier: "customerTableListVC") as! CustomerListTableViewController
                     self.navigationController?.pushViewController(secondVC, animated: true)
