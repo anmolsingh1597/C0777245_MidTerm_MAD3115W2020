@@ -14,6 +14,7 @@ class DataStorage
     var ref = Database.database().reference()
     private static let instance = DataStorage()
     private lazy var customerList: [Customer] = []
+    private lazy var billList: [Bill] = []
     private init (){}
     
     static func getInstance() -> DataStorage{
@@ -22,6 +23,14 @@ class DataStorage
     
     func addCustomer(customer: Customer){
         self.customerList.append(customer)
+    }
+    
+    func addBill(bill: Bill){
+        self.billList.append(bill)
+    }
+    
+    func getAllBills() -> [Bill]{
+        return self.billList
     }
     
     func getAllCustomers() -> [Customer]{
@@ -34,6 +43,15 @@ class DataStorage
             if let userDict = snapshot.value as? [String: [String: String]]{
                 for value in userDict.values{
                     self.customerList.append((Customer.init(customerId: value["id"]!, firstName: value["firstName"]!, lastName: value["lastName"]!, emailId: value["email"]!, mobile: value["mobile"]!)))
+                }
+            }
+        })
+        let billRefer = self.ref.child("Bills")
+        billRefer.observeSingleEvent(of: .value, with: {(snapshot)
+            in
+            if let billDict = snapshot.value as? [String: [String: Any]]{
+                for value in billDict.values{
+                    self.billList.append((Bill(custId: value["custId"]! as! String, billId: value["id"]! as! String, billDate: value["date"]! as! String, billType: value["billType"]! as! String, billAmount: value["billAmount"]! as! Double)))
                 }
             }
         })

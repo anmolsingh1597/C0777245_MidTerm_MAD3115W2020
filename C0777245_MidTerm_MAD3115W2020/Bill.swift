@@ -10,22 +10,23 @@ import Foundation
 
 public class Bill
 {
-    let billId: Int
-    var billDate: Date
-    //var billType: Enum.BillType
-    var billAmount: Double = 0.0
+    var custId: String
+    var billId: String
+    var billDate: String
+    var billType: String
+    var billAmount: Double
    
-    init(billId: Int, billDate: Date /* ,billType: Enum.BillType*/){  //constructor
-         self.billId = billId //intializing variables necessary in class
-         self.billDate = billDate
-      //  self.billType = billType
-     
-       
-     }
-
-    func calculateBill() -> Double{
-        return billAmount
+    init(custId: String, billId: String, billDate: String, billType: String, billAmount: Double){
+        self.custId = custId
+        self.billId = billId
+        self.billDate = billDate
+        self.billType = billType
+        self.billAmount = billAmount
     }
+
+//    func calculateBill() -> Double{
+//        return billAmount
+//    }
 
 //    func display(){
 //        print("\t\tBill Date : \(billDate.getFormattedDate())")
