@@ -23,7 +23,15 @@ class ShowBillDetailsViewController: UIViewController {
         iLastName.text = self.lastName
     }
     
-
+    @IBAction func iCustomers(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        let customerVC = sb.instantiateViewController(identifier: "customerTableListVC") as! CustomerListTableViewController
+        
+        self.navigationController?.pushViewController(customerVC, animated: true)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

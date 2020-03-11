@@ -11,21 +11,25 @@ import Firebase
 
 class AddNewBillViewController: UIViewController, UITextFieldDelegate
 {
-    var ref = Database.database().reference().child("Users")
+    var ref = Database.database().reference()
     var datePicker : UIDatePicker!
     @IBOutlet weak var iDateTextField: UITextField!
     @IBOutlet weak var iBillId: UITextField!
     @IBOutlet weak var iBillType: UITextField!
     @IBOutlet weak var iBillAmount: UITextField!
-    
+    var custId = String()
+    let showBillDetailsVC: ShowBillDetailsViewController = ShowBillDetailsViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let showBillDetailsVC: ShowBillDetailsViewController = sb.instantiateViewController(withIdentifier: "showBillDetailsVC") as! ShowBillDetailsViewController
+        self.custId = showBillDetailsVC.customerId ?? ""
     }
-    override func didReceiveMemoryWarning() {
-         super.didReceiveMemoryWarning()
-         // Dispose of any resources that can be recreated.
-     }
+//    override func didReceiveMemoryWarning() {
+//         super.didReceiveMemoryWarning()
+//         // Dispose of any resources that can be recreated.
+//     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
            self.pickUpDate(self.iDateTextField)
@@ -33,12 +37,13 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
 
     
     @IBAction func iSaveButton(_ sender: UIBarButtonItem) {
+
         let billId = self.iBillId.text
         let date = self.iDateTextField.text
         let billType = self.iBillType.text
         let billAmount = self.iBillAmount.text
           guard let key = self.ref.child("Bills").childByAutoId().key else {return}
-        let insert = ["id": billId, "date": date, "billType": billType, "billAmount": billAmount]
+        let insert = ["custId": self.custId, "id": billId, "date": date, "billType": billType, "billAmount": billAmount]
         if billId == "" || date == "" || billType == "" || billAmount == ""
                        {
                           
@@ -50,6 +55,9 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
             let childUpdates = ["/Bills/\(key)": insert]
                               self.ref.updateChildValues(childUpdates)
                              
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+                           let showBillDetailsVC = sb.instantiateViewController(identifier: "showBillDetailsVC") as! ShowBillDetailsViewController
+                           self.navigationController?.pushViewController(showBillDetailsVC, animated: true)
         }
         
     }
