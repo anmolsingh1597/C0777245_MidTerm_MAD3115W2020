@@ -54,7 +54,7 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
         else{
             let childUpdates = ["/Bills/\(key)": insert]
                               self.ref.updateChildValues(childUpdates)
-                             
+            DataStorage.getInstance().addBill(bill: Bill.init(custId: self.custId, billId: billId ?? "", billDate: date ?? "", billType: billType ?? "", billAmount: billAmount ?? ""))
             let sb = UIStoryboard(name: "Main", bundle: nil)
                            let showBillDetailsVC = sb.instantiateViewController(identifier: "showBillDetailsVC") as! ShowBillDetailsViewController
                            self.navigationController?.pushViewController(showBillDetailsVC, animated: true)
