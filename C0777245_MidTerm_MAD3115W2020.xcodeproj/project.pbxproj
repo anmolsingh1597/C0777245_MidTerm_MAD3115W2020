@@ -118,14 +118,14 @@
 				8E3FD89D2412696B00AA42E2 /* Main.storyboard */,
 				8E3FD8A22412696B00AA42E2 /* LaunchScreen.storyboard */,
 				8EAFC89A2415705B00DFFD30 /* Customer.swift */,
-				8EAFC89C2415741600DFFD30 /* DataStorage.swift */,
-				8EAFC89E2415AE5C00DFFD30 /* String+Extension.swift */,
-				8E3FD8A52412696B00AA42E2 /* Info.plist */,
-				8E3FD8AD24126B3000AA42E2 /* GoogleService-Info.plist */,
 				8EC30A9824193A01007427AA /* Bill.swift */,
 				8EC30A9A24193A87007427AA /* Hydro.swift */,
 				8EC30A9C24193B23007427AA /* Internet.swift */,
 				8EC30A9E24193B47007427AA /* Mobile.swift */,
+				8EAFC89C2415741600DFFD30 /* DataStorage.swift */,
+				8EAFC89E2415AE5C00DFFD30 /* String+Extension.swift */,
+				8E3FD8A52412696B00AA42E2 /* Info.plist */,
+				8E3FD8AD24126B3000AA42E2 /* GoogleService-Info.plist */,
 			);
 			path = C0777245_MidTerm_MAD3115W2020;
 			sourceTree = "<group>";

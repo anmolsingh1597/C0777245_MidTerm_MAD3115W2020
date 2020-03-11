@@ -22,9 +22,9 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let showBillDetailsVC: ShowBillDetailsViewController = sb.instantiateViewController(withIdentifier: "showBillDetailsVC") as! ShowBillDetailsViewController
-        self.custId = showBillDetailsVC.customerId ?? ""
+//        let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                let showBillDetailsVC: ShowBillDetailsViewController = sb.instantiateViewController(withIdentifier: "showBillDetailsVC") as! ShowBillDetailsViewController
+        self.custId = ShowBillDetailsViewController.customerId ?? ""
     }
 //    override func didReceiveMemoryWarning() {
 //         super.didReceiveMemoryWarning()

@@ -9,25 +9,26 @@
 import UIKit
 
 class ShowBillDetailsViewController: UIViewController {
-    var customerId: String?
-    var firstName: String?
-    var lastName: String?
+    static var customerId: String?
+    static var firstName: String?
+    static var lastName: String?
     @IBOutlet weak var iCustomerId: UILabel!
     @IBOutlet weak var iFirstName: UILabel!
     @IBOutlet weak var iLastName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        iCustomerId.text = self.customerId
-        iFirstName.text = self.firstName
-        iLastName.text = self.lastName
+        print(ShowBillDetailsViewController.self.firstName!)
+        iCustomerId.text = ShowBillDetailsViewController.self.customerId
+        iFirstName.text = ShowBillDetailsViewController.self.firstName
+        iLastName.text = ShowBillDetailsViewController.self.lastName
     }
     
     @IBAction func iCustomers(_ sender: UIBarButtonItem) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         let customerVC = sb.instantiateViewController(identifier: "customerTableListVC") as! CustomerListTableViewController
-        
+//        self.navigationController?.popViewController(animated: true)
         self.navigationController?.pushViewController(customerVC, animated: true)
     }
     
