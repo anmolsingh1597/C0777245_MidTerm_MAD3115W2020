@@ -10,7 +10,7 @@ import UIKit
 
 class BillTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var iCustomerId: UILabel!
+    @IBOutlet weak var iCustomerID: UILabel!
     @IBOutlet weak var iBillId: UILabel!
     @IBOutlet weak var iDate: UILabel!
     @IBOutlet weak var iBillType: UILabel!

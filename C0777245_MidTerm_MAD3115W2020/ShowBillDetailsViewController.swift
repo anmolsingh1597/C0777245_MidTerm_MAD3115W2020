@@ -61,16 +61,16 @@ extension ShowBillDetailsViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BillTableViewCell", for: indexPath) as! BillTableViewCell
         let bill = billList[indexPath.row]
-        cell.iCustomerId.text = bill.custId
-        cell.iBillId.text = bill.billId
-        cell.iDate.text = bill.billDate
-        cell.iBillType.text = bill.billType
-        cell.iBillAmount.text = bill.billAmount
+        cell.iCustomerID.text =  "Customer Id: " + bill.custId
+        cell.iBillId.text = "Bill Id: " + bill.billId
+        cell.iDate.text = "Date: " + bill.billDate
+        cell.iBillType.text = "Bill Type: " + bill.billType
+        cell.iBillAmount.text = "Bill Amount: " + bill.billAmount
         
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      return CGFloat(100.0)
+        return UITableView.automaticDimension
     }
      
     func numberOfSections(in tableView: UITableView) -> Int {
