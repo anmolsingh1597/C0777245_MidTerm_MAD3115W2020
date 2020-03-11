@@ -27,6 +27,7 @@
 		8EC30A9B24193A87007427AA /* Hydro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC30A9A24193A87007427AA /* Hydro.swift */; };
 		8EC30A9D24193B23007427AA /* Internet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC30A9C24193B23007427AA /* Internet.swift */; };
 		8EC30A9F24193B47007427AA /* Mobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC30A9E24193B47007427AA /* Mobile.swift */; };
+		8EC30AA124199741007427AA /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC30AA024199741007427AA /* BillTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		8EC30A9A24193A87007427AA /* Hydro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hydro.swift; sourceTree = "<group>"; };
 		8EC30A9C24193B23007427AA /* Internet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Internet.swift; sourceTree = "<group>"; };
 		8EC30A9E24193B47007427AA /* Mobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile.swift; sourceTree = "<group>"; };
+		8EC30AA024199741007427AA /* BillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				8EAFC89E2415AE5C00DFFD30 /* String+Extension.swift */,
 				8E3FD8A52412696B00AA42E2 /* Info.plist */,
 				8E3FD8AD24126B3000AA42E2 /* GoogleService-Info.plist */,
+				8EC30AA024199741007427AA /* BillTableViewCell.swift */,
 			);
 			path = C0777245_MidTerm_MAD3115W2020;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				8E3FD89C2412696B00AA42E2 /* LoginViewController.swift in Sources */,
 				8EC30A9924193A01007427AA /* Bill.swift in Sources */,
 				8E3FD8B22412BB7D00AA42E2 /* AddNewCustomerViewController.swift in Sources */,
+				8EC30AA124199741007427AA /* BillTableViewCell.swift in Sources */,
 				8EC30A8F2417AA39007427AA /* CustomerTableViewCell.swift in Sources */,
 				8EAFC89B2415705B00DFFD30 /* Customer.swift in Sources */,
 				8E3FD8982412696B00AA42E2 /* AppDelegate.swift in Sources */,

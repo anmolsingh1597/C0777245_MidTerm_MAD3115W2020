@@ -14,9 +14,9 @@ public class Bill
     var billId: String
     var billDate: String
     var billType: String
-    var billAmount: Double
+    var billAmount: String
    
-    init(custId: String, billId: String, billDate: String, billType: String, billAmount: Double){
+    init(custId: String, billId: String, billDate: String, billType: String, billAmount: String){
         self.custId = custId
         self.billId = billId
         self.billDate = billDate

@@ -49,9 +49,9 @@ class DataStorage
         let billRefer = self.ref.child("Bills")
         billRefer.observeSingleEvent(of: .value, with: {(snapshot)
             in
-            if let billDict = snapshot.value as? [String: [String: Any]]{
+            if let billDict = snapshot.value as? [String: [String: String]]{
                 for value in billDict.values{
-                    self.billList.append((Bill(custId: value["custId"]! as! String, billId: value["id"]! as! String, billDate: value["date"]! as! String, billType: value["billType"]! as! String, billAmount: value["billAmount"]! as! Double)))
+                    self.billList.append((Bill(custId: value["custId"]! , billId: value["id"]! , billDate: value["date"]! , billType: value["billType"]! , billAmount: value["billAmount"]!)))
                 }
             }
         })

@@ -15,13 +15,13 @@ class ShowBillDetailsViewController: UIViewController {
     @IBOutlet weak var iCustomerId: UILabel!
     @IBOutlet weak var iFirstName: UILabel!
     @IBOutlet weak var iLastName: UILabel!
+    var billList: [Bill] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(ShowBillDetailsViewController.self.firstName!)
-        iCustomerId.text = ShowBillDetailsViewController.self.customerId
-        iFirstName.text = ShowBillDetailsViewController.self.firstName
-        iLastName.text = ShowBillDetailsViewController.self.lastName
+        cellValue()
+        billList = DataStorage.getInstance().getAllBills()
     }
     
     @IBAction func iCustomers(_ sender: UIBarButtonItem) {
@@ -32,6 +32,14 @@ class ShowBillDetailsViewController: UIViewController {
         self.navigationController?.pushViewController(customerVC, animated: true)
     }
     
+    func cellValue(){
+        print(ShowBillDetailsViewController.self.firstName!)
+              iCustomerId.text = ShowBillDetailsViewController.self.customerId
+              iFirstName.text = ShowBillDetailsViewController.self.firstName
+              iLastName.text = ShowBillDetailsViewController.self.lastName
+              
+              
+    }
     
     /*
     // MARK: - Navigation
@@ -45,3 +53,28 @@ class ShowBillDetailsViewController: UIViewController {
 
 }
 
+extension ShowBillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return billList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BillTableViewCell", for: indexPath) as! BillTableViewCell
+        let bill = billList[indexPath.row]
+        cell.iCustomerId.text = bill.custId
+        cell.iBillId.text = bill.billId
+        cell.iDate.text = bill.billDate
+        cell.iBillType.text = bill.billType
+        cell.iBillAmount.text = bill.billAmount
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+      return CGFloat(100.0)
+    }
+     
+    func numberOfSections(in tableView: UITableView) -> Int {
+      return 1
+    }
+    
+}
