@@ -22,6 +22,7 @@ class ShowBillDetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
         cellValue()
         billList = DataStorage.getInstance().getAllBills()
+        
     }
     
     @IBAction func iCustomers(_ sender: UIBarButtonItem) {
@@ -33,12 +34,9 @@ class ShowBillDetailsViewController: UIViewController {
     }
     
     func cellValue(){
-        print(ShowBillDetailsViewController.self.firstName!)
               iCustomerId.text = ShowBillDetailsViewController.self.customerId
               iFirstName.text = ShowBillDetailsViewController.self.firstName
               iLastName.text = ShowBillDetailsViewController.self.lastName
-              
-              
     }
     
     /*
@@ -61,11 +59,17 @@ extension ShowBillDetailsViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BillTableViewCell", for: indexPath) as! BillTableViewCell
         let bill = billList[indexPath.row]
+//        let billArray = billList.filter()
         cell.iCustomerID.text =  "Customer Id: " + bill.custId
         cell.iBillId.text = "Bill Id: " + bill.billId
         cell.iDate.text = "Date: " + bill.billDate
         cell.iBillType.text = "Bill Type: " + bill.billType
-        cell.iBillAmount.text = "Bill Amount: " + bill.billAmount
+            cell.iBillAmount.text = "Bill Amount: " + bill.billAmount
+        
+   
+//        } else{
+//            cell.textLabel?.text = "No bill assign to this Customer"
+//        }
         
         return cell
     }
