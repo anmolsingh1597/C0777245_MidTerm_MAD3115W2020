@@ -65,16 +65,19 @@ class ShowBillDetailsViewController: UIViewController {
 
 extension ShowBillDetailsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return billList.count
+        return billArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BillTableViewCell", for: indexPath) as! BillTableViewCell
         
-        let bill = billList[indexPath.row]
+//        let bill = billList[indexPath.row]
 
-
-//        let bill = billArray[indexPath.row]
+        if billArray.isEmpty == true{
+            cell.textLabel?.text = "No bill assign to this Customer"
+        
+        }else{
+        let bill = billArray[indexPath.row]
         
         cell.iCustomerID.text =  "Customer Id: " + bill.custId
         cell.iBillId.text = "Bill Id: " + bill.billId
@@ -82,9 +85,8 @@ extension ShowBillDetailsViewController: UITableViewDelegate, UITableViewDataSou
         cell.iBillType.text = "Bill Type: " + bill.billType
         cell.iBillAmount.text = "Bill Amount: " + bill.billAmount
         
-   
+    }
 //        }else{
-//            cell.textLabel?.text = "No bill assign to this Customer"
 //        }
         
         return cell
