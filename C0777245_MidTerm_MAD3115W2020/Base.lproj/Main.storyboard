@@ -74,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="892.75362318840587" y="137.94642857142856"/>
         </scene>
-        <!--Show Bill Details View Controller-->
+        <!--Bill Details-->
         <scene sceneID="eYY-iA-BNq">
             <objects>
                 <viewController storyboardIdentifier="showBillDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uB2-2H-kxM" customClass="ShowBillDetailsViewController" customModule="C0777245_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
@@ -224,7 +224,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yGX-cW-FYv"/>
                     </view>
-                    <navigationItem key="navigationItem" id="PcC-Cm-RAh">
+                    <navigationItem key="navigationItem" title="Bill Details" id="PcC-Cm-RAh">
                         <barButtonItem key="leftBarButtonItem" title="Customers" image="person.crop.circle" catalog="system" style="plain" id="qz1-mP-3ag">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -247,7 +247,7 @@
             </objects>
             <point key="canvasLocation" x="4347.826086956522" y="-558.48214285714278"/>
         </scene>
-        <!--Add New Bill View Controller-->
+        <!--New Bill-->
         <scene sceneID="pfn-ui-rx9">
             <objects>
                 <viewController storyboardIdentifier="addNewBillVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xpF-Ro-eXB" customClass="AddNewBillViewController" customModule="C0777245_MidTerm_MAD3115W2020" customModuleProvider="target" sceneMemberID="viewController">
@@ -322,7 +322,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aGa-Af-v9x"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Pjr-6x-PKL">
+                    <navigationItem key="navigationItem" title="New Bill" id="Pjr-6x-PKL">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="pgS-kz-UCx">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>

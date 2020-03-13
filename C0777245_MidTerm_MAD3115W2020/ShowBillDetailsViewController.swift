@@ -17,31 +17,19 @@ class ShowBillDetailsViewController: UIViewController {
     @IBOutlet weak var iLastName: UILabel!
     var billList: [Bill] = []
     var billArray: [Bill] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         cellValue()
         billList = DataStorage.getInstance().getAllBills()
-
         billArray = billList.filter{$0.custId == ShowBillDetailsViewController.customerId}
-
-        print("---------------------------------")
-        for value in billList{
-            print(value.custId)}
-        print("---------------------------------")
-        for value in billArray{
-            print(value.custId)
-            print(value.billId)
-        }
-     
-        
     }
     
     @IBAction func iCustomers(_ sender: UIBarButtonItem) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         let customerVC = sb.instantiateViewController(identifier: "customerTableListVC") as! CustomerListTableViewController
-//        self.navigationController?.popViewController(animated: true)
         self.navigationController?.pushViewController(customerVC, animated: true)
     }
     
@@ -70,12 +58,9 @@ extension ShowBillDetailsViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BillTableViewCell", for: indexPath) as! BillTableViewCell
-        
-//        let bill = billList[indexPath.row]
 
         if billArray.isEmpty == true{
-            cell.textLabel?.text = "No bill assign to this Customer"
-        
+           
         }else{
         let bill = billArray[indexPath.row]
         
@@ -83,11 +68,10 @@ extension ShowBillDetailsViewController: UITableViewDelegate, UITableViewDataSou
         cell.iBillId.text = "Bill Id: " + bill.billId
         cell.iDate.text = "Date: " + bill.billDate
         cell.iBillType.text = "Bill Type: " + bill.billType
-        cell.iBillAmount.text = "Bill Amount: " + bill.billAmount
+        cell.iBillAmount.text = "Bill Amount: " + bill.billAmount as? String
         
     }
-//        }else{
-//        }
+
         
         return cell
     }
