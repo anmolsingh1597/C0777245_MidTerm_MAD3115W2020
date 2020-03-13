@@ -108,8 +108,7 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
         let billAmount = self.iBillAmount.text
 //        var insert: [String: String]
           guard let key = self.ref.child("Bills").childByAutoId().key else {return}
-//
-//        let insert = ["custId": self.custId, "id": billId, "date": date, "billType": billType, "billAmount": billAmount]
+
         
         if billType == "Mobile"{
             let mobileManufacturer = self.iInheritanceTextField1.text
@@ -120,13 +119,17 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
             self.insert = ["custId": self.custId, "id": billId ?? "", "date": date ?? "", "billType": billType ?? "", "billAmount": billAmount ?? "", "mobileManufacturer": mobileManufacturer ?? "", "planName": planName ?? "", "mobileNumber": mobileNumber ?? "", "internetGb": internetGb ?? "", "minutes": minutes ?? ""]
               
           } else if billType == "Internet"{
-              
+            let providerName = self.iInheritanceTextField1.text
+            let internetGb = self.iInheritanceTextField2.text
+            self.insert = ["custId": self.custId, "id": billId ?? "", "date": date ?? "", "billType": billType ?? "", "billAmount": billAmount ?? "", "providerName": providerName ?? "", "internetGb": internetGb ?? ""]
           }
           else if billType == "Hydro"{
-              
+            let agencyName = self.iInheritanceTextField1.text
+            let unitsConsumed = self.iInheritanceTextField2.text
+             self.insert = ["custId": self.custId, "id": billId ?? "", "date": date ?? "", "billType": billType ?? "", "billAmount": billAmount ?? "", "agencyName": agencyName ?? "", "unitsConsumed": unitsConsumed ?? ""]
           }
           else{
-              
+            self.insert = ["custId": self.custId, "id": billId ?? "", "date": date ?? "", "billType": billType ?? "", "billAmount": billAmount ?? ""]
           }
         if billId == "" || date == "" || billType == "" || billAmount == ""
                        {
