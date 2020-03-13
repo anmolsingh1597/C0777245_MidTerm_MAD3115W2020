@@ -17,6 +17,7 @@
 		8E3FD8AE24126B3000AA42E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E3FD8AD24126B3000AA42E2 /* GoogleService-Info.plist */; };
 		8E3FD8B02412872700AA42E2 /* CustomerListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD8AF2412872700AA42E2 /* CustomerListTableViewController.swift */; };
 		8E3FD8B22412BB7D00AA42E2 /* AddNewCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3FD8B12412BB7D00AA42E2 /* AddNewCustomerViewController.swift */; };
+		8E41149D241BEE1300407DDB /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41149C241BEE1300407DDB /* Double+Extension.swift */; };
 		8EAFC89B2415705B00DFFD30 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAFC89A2415705B00DFFD30 /* Customer.swift */; };
 		8EAFC89D2415741600DFFD30 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAFC89C2415741600DFFD30 /* DataStorage.swift */; };
 		8EAFC89F2415AE5C00DFFD30 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAFC89E2415AE5C00DFFD30 /* String+Extension.swift */; };
@@ -44,6 +45,7 @@
 		8E3FD8AD24126B3000AA42E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8E3FD8AF2412872700AA42E2 /* CustomerListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListTableViewController.swift; sourceTree = "<group>"; };
 		8E3FD8B12412BB7D00AA42E2 /* AddNewCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCustomerViewController.swift; sourceTree = "<group>"; };
+		8E41149C241BEE1300407DDB /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		8EAFC89A2415705B00DFFD30 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		8EAFC89C2415741600DFFD30 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		8EAFC89E2415AE5C00DFFD30 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				8EAFC89E2415AE5C00DFFD30 /* String+Extension.swift */,
 				8E3FD8A52412696B00AA42E2 /* Info.plist */,
 				8E3FD8AD24126B3000AA42E2 /* GoogleService-Info.plist */,
+				8E41149C241BEE1300407DDB /* Double+Extension.swift */,
 			);
 			path = C0777245_MidTerm_MAD3115W2020;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				8EC30A8D2417A51F007427AA /* ShowBillDetailsViewController.swift in Sources */,
 				8EAFC89F2415AE5C00DFFD30 /* String+Extension.swift in Sources */,
 				8EC30A9B24193A87007427AA /* Hydro.swift in Sources */,
+				8E41149D241BEE1300407DDB /* Double+Extension.swift in Sources */,
 				8E3FD8B02412872700AA42E2 /* CustomerListTableViewController.swift in Sources */,
 				8E3FD89C2412696B00AA42E2 /* LoginViewController.swift in Sources */,
 				8EC30A9924193A01007427AA /* Bill.swift in Sources */,
