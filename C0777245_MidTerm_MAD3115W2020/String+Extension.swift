@@ -29,4 +29,9 @@ extension String{
         return "Invalid Mobile Number"
     }
 
+     func getFormattedAmount() -> String
+    {
+           return String(format: "$%0.2f", String(self))
+    }
+    
 }

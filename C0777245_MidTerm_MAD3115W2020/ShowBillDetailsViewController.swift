@@ -15,15 +15,16 @@ class ShowBillDetailsViewController: UIViewController {
     @IBOutlet weak var iCustomerId: UILabel!
     @IBOutlet weak var iFirstName: UILabel!
     @IBOutlet weak var iLastName: UILabel!
+    @IBOutlet weak var iTotalAmount: UILabel!
     var billList: [Bill] = []
     var billArray: [Bill] = []
-    
+    var billTotal: Double = Double()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        cellValue()
         billList = DataStorage.getInstance().getAllBills()
         billArray = billList.filter{$0.custId == ShowBillDetailsViewController.customerId}
+        cellValue()
     }
     
     @IBAction func iCustomers(_ sender: UIBarButtonItem) {
@@ -34,9 +35,9 @@ class ShowBillDetailsViewController: UIViewController {
     }
     
     func cellValue(){
-              iCustomerId.text = ShowBillDetailsViewController.self.customerId
-              iFirstName.text = ShowBillDetailsViewController.self.firstName
-              iLastName.text = ShowBillDetailsViewController.self.lastName
+            iCustomerId.text = ShowBillDetailsViewController.self.customerId
+            iFirstName.text = ShowBillDetailsViewController.self.firstName
+            iLastName.text = ShowBillDetailsViewController.self.lastName
     }
     
     /*
@@ -60,19 +61,17 @@ extension ShowBillDetailsViewController: UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "BillTableViewCell", for: indexPath) as! BillTableViewCell
 
         if billArray.isEmpty == true{
-           
+       
         }else{
         let bill = billArray[indexPath.row]
-        
         cell.iCustomerID.text =  "Customer Id: " + bill.custId
         cell.iBillId.text = "Bill Id: " + bill.billId
         cell.iDate.text = "Date: " + bill.billDate
         cell.iBillType.text = "Bill Type: " + bill.billType
-        cell.iBillAmount.text = "Bill Amount: " + bill.billAmount as? String
-        
+        cell.iBillAmount.text = "Bill Amount: $" + bill.billAmount
+            self.billTotal += Double(bill.billAmount) ?? 0
+            iTotalAmount.text = "Total Amount: $" + String(self.billTotal)
     }
-
-        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

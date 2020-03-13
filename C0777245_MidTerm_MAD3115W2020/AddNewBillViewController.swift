@@ -19,18 +19,13 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var iBillAmount: UITextField!
     var custId = String()
     let showBillDetailsVC: ShowBillDetailsViewController = ShowBillDetailsViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                let showBillDetailsVC: ShowBillDetailsViewController = sb.instantiateViewController(withIdentifier: "showBillDetailsVC") as! ShowBillDetailsViewController
         self.custId = ShowBillDetailsViewController.customerId ?? ""
     }
-//    override func didReceiveMemoryWarning() {
-//         super.didReceiveMemoryWarning()
-//         // Dispose of any resources that can be recreated.
-//     }
-    
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
            self.pickUpDate(self.iDateTextField)
        }

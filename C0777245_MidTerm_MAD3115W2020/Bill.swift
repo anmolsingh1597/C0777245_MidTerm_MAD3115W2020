@@ -24,14 +24,5 @@ public class Bill
         self.billAmount = billAmount
     }
 
-//    func calculateBill() -> Double{
-//        return billAmount
-//    }
-
-//    func display(){
-//        print("\t\tBill Date : \(billDate.getFormattedDate())")
-//         print("\t\tBill Type : \(billType)")
-//        print("\t\tBill Amount : \(calculateBill().getFormattedAmount())")
-//     }
     
 }
