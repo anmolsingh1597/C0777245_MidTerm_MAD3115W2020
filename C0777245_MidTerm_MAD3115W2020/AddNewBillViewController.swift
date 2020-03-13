@@ -17,6 +17,17 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var iBillId: UITextField!
     @IBOutlet weak var iBillType: UITextField!
     @IBOutlet weak var iBillAmount: UITextField!
+    @IBOutlet weak var iInheritanceLabel1: UILabel!
+    @IBOutlet weak var iInheritanceLabel2: UILabel!
+    @IBOutlet weak var iInheritanceLabel3: UILabel!
+    @IBOutlet weak var iInheritanceLabel4: UILabel!
+    @IBOutlet weak var iInheritanceLabel5: UILabel!
+    @IBOutlet weak var iInheritanceTextField1: UITextField!
+    @IBOutlet weak var iInheritanceTextField2: UITextField!
+    @IBOutlet weak var iInheritanceTextField3: UITextField!
+    @IBOutlet weak var iInheritanceTextField4: UITextField!
+    @IBOutlet weak var iInheritanceTextField5: UITextField!
+    
     var custId = String()
     let showBillDetailsVC: ShowBillDetailsViewController = ShowBillDetailsViewController()
     
@@ -35,10 +46,49 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
         switch index{
         case 0:
             iBillType.text = "Mobile"
+            iInheritanceLabel1.isHidden = false
+            iInheritanceLabel2.isHidden = false
+            iInheritanceLabel3.isHidden = false
+            iInheritanceLabel4.isHidden = false
+            iInheritanceLabel5.isHidden = false
+            iInheritanceTextField1.isHidden = false
+            iInheritanceTextField2.isHidden = false
+            iInheritanceTextField3.isHidden = false
+            iInheritanceTextField4.isHidden = false
+            iInheritanceTextField5.isHidden = false
+            iInheritanceLabel1.text = "Mobile Manufacturer:"
+            iInheritanceLabel2.text = "Plan Name:"
+            iInheritanceLabel3.text = "Mobile Number:"
+            iInheritanceLabel4.text = "Internet GB:"
+            iInheritanceLabel5.text = "Minutes:"
         case 1:
             iBillType.text = "Internet"
+            iInheritanceLabel1.isHidden = false
+            iInheritanceLabel2.isHidden = false
+            iInheritanceLabel3.isHidden = true
+            iInheritanceLabel4.isHidden = true
+            iInheritanceLabel5.isHidden = true
+            iInheritanceTextField1.isHidden = false
+            iInheritanceTextField2.isHidden = false
+            iInheritanceTextField3.isHidden = true
+            iInheritanceTextField4.isHidden = true
+            iInheritanceTextField5.isHidden = true
+            iInheritanceLabel1.text = "Provider Name:"
+            iInheritanceLabel2.text = "Internet GB:"
         case 2:
             iBillType.text = "Hydro"
+            iInheritanceLabel1.isHidden = false
+            iInheritanceLabel2.isHidden = false
+            iInheritanceLabel3.isHidden = true
+            iInheritanceLabel4.isHidden = true
+            iInheritanceLabel5.isHidden = true
+            iInheritanceTextField1.isHidden = false
+            iInheritanceTextField2.isHidden = false
+            iInheritanceTextField3.isHidden = true
+            iInheritanceTextField4.isHidden = true
+            iInheritanceTextField5.isHidden = true
+            iInheritanceLabel1.text = "Agency Name:"
+            iInheritanceLabel2.text = "Units Consumed:"
         default:
             iBillType.text = ""
         }
