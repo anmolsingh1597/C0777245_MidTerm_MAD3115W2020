@@ -69,8 +69,8 @@ extension ShowBillDetailsViewController: UITableViewDelegate, UITableViewDataSou
         cell.iDate.text = "Date: " + bill.billDate
         cell.iBillType.text = "Bill Type: " + bill.billType
         cell.iBillAmount.text = "Bill Amount: $" + bill.billAmount
-            self.billTotal += Double(bill.billAmount) ?? 0
-            iTotalAmount.text = "Total Amount: $" + String(self.billTotal)
+        self.billTotal += Double(bill.billAmount) ?? 0
+        iTotalAmount.text = "Total Amount: $" + String(self.billTotal)
     }
         return cell
     }

@@ -25,6 +25,24 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
         // Do any additional setup after loading the view.
         self.custId = ShowBillDetailsViewController.customerId ?? ""
     }
+    
+    @IBAction func iBillTypeSegment(_ sender: UISegmentedControl) {
+        iSegmentValues(index: sender.selectedSegmentIndex)
+        
+    }
+    
+    private func iSegmentValues(index: Int){
+        switch index{
+        case 0:
+            iBillType.text = "Mobile"
+        case 1:
+            iBillType.text = "Internet"
+        case 2:
+            iBillType.text = "Hydro"
+        default:
+            iBillType.text = ""
+        }
+    }
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
            self.pickUpDate(self.iDateTextField)
