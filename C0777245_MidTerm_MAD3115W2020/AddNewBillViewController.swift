@@ -28,6 +28,7 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var iInheritanceTextField4: UITextField!
     @IBOutlet weak var iInheritanceTextField5: UITextField!
     
+    var insert: [String: String] = [String: String]()
     var custId = String()
     let showBillDetailsVC: ShowBillDetailsViewController = ShowBillDetailsViewController()
     
@@ -105,8 +106,28 @@ class AddNewBillViewController: UIViewController, UITextFieldDelegate
         let date = self.iDateTextField.text
         let billType = self.iBillType.text
         let billAmount = self.iBillAmount.text
+//        var insert: [String: String]
           guard let key = self.ref.child("Bills").childByAutoId().key else {return}
-        let insert = ["custId": self.custId, "id": billId, "date": date, "billType": billType, "billAmount": billAmount]
+//
+//        let insert = ["custId": self.custId, "id": billId, "date": date, "billType": billType, "billAmount": billAmount]
+        
+        if billType == "Mobile"{
+            let mobileManufacturer = self.iInheritanceTextField1.text
+            let planName = self.iInheritanceTextField2.text
+            let mobileNumber = self.iInheritanceTextField3.text
+            let internetGb = self.iInheritanceTextField4.text
+            let minutes = self.iInheritanceTextField5.text
+            self.insert = ["custId": self.custId, "id": billId ?? "", "date": date ?? "", "billType": billType ?? "", "billAmount": billAmount ?? "", "mobileManufacturer": mobileManufacturer ?? "", "planName": planName ?? "", "mobileNumber": mobileNumber ?? "", "internetGb": internetGb ?? "", "minutes": minutes ?? ""]
+              
+          } else if billType == "Internet"{
+              
+          }
+          else if billType == "Hydro"{
+              
+          }
+          else{
+              
+          }
         if billId == "" || date == "" || billType == "" || billAmount == ""
                        {
                           
