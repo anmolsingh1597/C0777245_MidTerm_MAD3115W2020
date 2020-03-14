@@ -25,6 +25,7 @@ class ShowBillDetailsViewController: UIViewController {
         billList = DataStorage.getInstance().getAllBills()
         print(billList)
         billArray = billList.filter{$0.custId == ShowBillDetailsViewController.customerId}
+        print(billArray)
         cellValue()
     }
     

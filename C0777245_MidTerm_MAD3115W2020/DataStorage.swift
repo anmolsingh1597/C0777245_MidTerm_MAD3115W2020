@@ -51,7 +51,16 @@ class DataStorage
             in
             if let billDict = snapshot.value as? [String: [String: String]]{
                 for value in billDict.values{
-                    self.billList.append((Bill(custId: value["custId"]! , billId: value["id"]! , billDate: value["date"]! , billType: value["billType"]! , billAmount: value["billAmount"]!)))
+                    if value["billType"] == "Mobile"{
+                        self.billList.append((Mobile(custId: value["custId"] ?? "", billId: value["id"] ?? "", billDate: value["date"] ?? "", billType: value["billType"] ?? "", billAmount: value["billAmount"] ?? "", mobileManufacturerName: value["mobileManufacturer"] ?? "", planName: value["planName"] ?? "", mobileNumber: value["mobileNumber"] ?? "", internetGbUsed: value["internetGb"] ?? "", minuteUsed: value["minutes"] ?? "")))
+                    }else if value["billType"] == "Internet"{
+                        self.billList.append((Internet(custId: value["custId"] ?? "", billId: value["id"] ?? "", billDate: value["date"] ?? "", billType: value["billType"] ?? "", billAmount: value["billAmount"] ?? "", providerName: value["providerName"] ?? "", plannedGbUsed: value["internetGb"] ?? "")))
+                    }else if value["billType"] == "Hydro" {
+                        self.billList.append((Hydro(custId: value["custId"] ?? "", billId: value["id"] ?? "", billDate: value["date"] ?? "", billType: value["billType"] ?? "", billAmount: value["billAmount"] ?? "", agencyName: value["agencyName"] ?? "", unitConsumed: value["unitsConsumed"] ?? "")))
+                    }
+                    else {
+                        
+                    }
                 }
             }
         })
