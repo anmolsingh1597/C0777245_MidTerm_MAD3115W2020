@@ -23,6 +23,7 @@ class ShowBillDetailsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         billList = DataStorage.getInstance().getAllBills()
+        print(billList)
         billArray = billList.filter{$0.custId == ShowBillDetailsViewController.customerId}
         cellValue()
     }
